@@ -1,8 +1,33 @@
+html * {
+  font-family: "Questrial", sans-serif;
+}
+
 .App {
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 100vh;
+}
+
+.add-task {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.close-modal {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 2px solid white;
+  width: 100px;
+  height: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  background-color: rgba(255, 255, 255, 0.144);
 }
 
 .create-task {
@@ -12,19 +37,72 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  height: 400px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
   border: 2px solid white;
   transform: translate(-50%, -50%);
+  background-image: url(https://mcdn.wallpapersafari.com/medium/91/89/4wMeor.jpg);
+  background-size: cover;
 }
 
-.create-task label {
+.create-task form {
+  margin-top: 10%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
   color: white;
+}
+
+.create-task input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.create-task button {
+  margin-left: 10px;
+}
+
+.create-task-button {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 2px solid white;
+  width: 300px;
+  height: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.task input {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgb(255, 255, 255);
+  padding: 5px 5px 5px 5px;
 }
 
 .task-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.task-form-input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 2px solid white;
+  width: 10%;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .task-button-box {
@@ -38,11 +116,13 @@
 .task-menu {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  height: 600px;
-  width: 20%;
+  height: 40%;
+  width: 40%;
   border: 2px solid white;
   transform: translate(-50%, -50%);
 }
@@ -64,9 +144,13 @@
   cursor: pointer;
   height: 100%;
   width: 100%;
-  font-family: "Questrial", sans-serif;
   font-size: 200%;
   border-radius: 2px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
 }
 
 #righteous {
@@ -90,9 +174,9 @@
 }
 
 #red {
-  background-color: red;
+  background-color: rgb(255, 0, 0, 0.287);
 }
 
 #blue {
-  background-color: rgba(0, 0, 255, 0.287);
+  background-color: rgba(0, 0, 255, 0.187);
 }

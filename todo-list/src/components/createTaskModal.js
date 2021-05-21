@@ -21,7 +21,7 @@ const CreateTaskScreen = (props) => {
         <input type="text" {...register("taskname")} />
         <label>And what will it cost?</label>
         <input type="number" {...register("moralitycost")} />
-        <input type="submit" value="Create Task" />
+        <input className="add-task" type="submit" value="Create Task" />
       </form>
       <button onClick={props.onClose} className="close-modal">
         Close
