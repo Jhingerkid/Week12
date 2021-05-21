@@ -1,0 +1,98 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+}
+
+.create-task {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 200px;
+  border: 2px solid white;
+  transform: translate(-50%, -50%);
+}
+
+.create-task label {
+  color: white;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.task-button-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.task-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 600px;
+  width: 20%;
+  border: 2px solid white;
+  transform: translate(-50%, -50%);
+}
+
+.task-menu form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.task-menu-button {
+  height: 75px;
+  width: 15%;
+  padding: 0px 10% 0px 10%;
+}
+
+.task-menu-button button {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  font-family: "Questrial", sans-serif;
+  font-size: 200%;
+  border-radius: 2px;
+}
+
+#righteous {
+  background-color: rgba(0, 204, 255, 0.123);
+  color: rgb(0, 255, 255);
+  border: 2px solid rgba(0, 234, 255, 0.281);
+}
+
+#righteous:hover {
+  background-color: rgba(0, 204, 255, 0.356);
+}
+
+#fallen {
+  background-color: rgba(173, 0, 0, 0.123);
+  color: rgb(255, 0, 0);
+  border: 2px solid rgba(255, 0, 0, 0.281);
+}
+
+#fallen:hover {
+  background-color: rgba(173, 0, 0, 0.356);
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: rgba(0, 0, 255, 0.287);
+}
