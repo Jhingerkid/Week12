@@ -3,9 +3,9 @@ import React from "react";
 const Task = (props) => {
   function completeTask(e, id) {
     e.preventDefault();
-    let newTasks = props.toDoList;
+    let newTasks = [...props.toDoList];
     let index = newTasks.findIndex((i) => i.id === id);
-    newTasks[index].completion = [!newTasks[index].completion];
+    newTasks[index].completion = !newTasks[index].completion;
     props.setToDoList(newTasks);
   }
   function removeTask(e) {
