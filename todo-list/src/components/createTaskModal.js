@@ -6,9 +6,10 @@ const CreateTaskScreen = (props) => {
   const { register, handleSubmit } = useForm();
   function onSubmit(data) {
     setCount(count + 1);
-    let newTask = { id: count, taskName: data.taskname };
-    tasks.push(newTask);
-    props.setToDoList(tasks);
+    let newTask = { id: count, taskName: data.taskname, completion: false };
+    var newTasks = props.toDoList;
+    newTasks.push(newTask);
+    props.setToDoList(newTasks);
     props.onClose(false);
   }
   if (!props.showTaskCreation) {
@@ -16,7 +17,7 @@ const CreateTaskScreen = (props) => {
   }
   return (
     <div className="create-task">
-      <form onSubmit={handleSubmit(onSubmit, setCount)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label>What should we do sir?</label>
         <input type="text" {...register("taskname")} />
         <label>And what will it cost?</label>

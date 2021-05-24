@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import CreateTaskButton from "./createTaskButton";
-import CreateTaskScreen, { tasks } from "./createTaskModal";
+import CreateTaskScreen from "./createTaskModal";
 import TaskForm from "./taskform";
 
 const TaskMenu = (props) => {
-  const [toDoList, setToDoList] = useState(tasks);
+  const [toDoList, setToDoList] = useState([]);
   const [showTaskCreation, setTaskShow] = useState(false);
+  console.log(toDoList);
   if (!props.show) {
     return null;
   }
@@ -15,9 +16,10 @@ const TaskMenu = (props) => {
       <CreateTaskScreen
         onClose={() => setTaskShow(false)}
         showTaskCreation={showTaskCreation}
-        setToDoList={() => setToDoList(tasks)}
+        setToDoList={setToDoList}
+        toDoList={toDoList}
       />
-      <TaskForm toDoList={toDoList} />
+      <TaskForm toDoList={toDoList} setToDoList={setToDoList} />
       <button onClick={props.onClose} className="close-modal">
         Close
       </button>
