@@ -7,6 +7,7 @@ const TaskMenu = (props) => {
   const [toDoList, setToDoList] = useState([]);
   const [totalList, setTotalList] = useState([]);
   const [showTaskCreation, setTaskShow] = useState(false);
+  console.log(toDoList);
   if (!props.show) {
     return null;
   }
