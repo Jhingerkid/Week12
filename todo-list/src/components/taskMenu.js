@@ -24,16 +24,12 @@ const TaskMenu = (props) => {
         return incompletedTask;
       });
     setToDoList(incompletedTasks);
-    console.log("incomplete list");
   }
   function sortAll(e) {
     e.preventDefault();
     var allTasks = [...totalList];
     setToDoList(allTasks);
-    console.log("all");
   }
-  console.log("Total tasks", totalList);
-  console.log("Current Tasks", toDoList);
   if (!props.show) {
     return null;
   }

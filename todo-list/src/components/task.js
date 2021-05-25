@@ -11,7 +11,6 @@ const Task = (props) => {
     newTotalTasks[totalIndex].completion = newTasks[index].completion;
     props.setToDoList(newTasks);
     props.setTotalList(newTotalTasks);
-    console.log("complete");
   }
   function removeTask(e) {
     e.preventDefault();

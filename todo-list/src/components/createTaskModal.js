@@ -11,7 +11,6 @@ const CreateTaskScreen = (props) => {
     allTasks.push(newTask);
     props.setTotalList(allTasks);
     props.setToDoList(allTasks);
-    console.log("create task", count);
     props.onClose(false);
   }
   if (!props.showTaskCreation) {
