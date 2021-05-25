@@ -4,15 +4,22 @@ const Task = (props) => {
   function completeTask(e, id) {
     e.preventDefault();
     let newTasks = [...props.toDoList];
+    let newTotalTasks = [...props.totalList];
     let index = newTasks.findIndex((i) => i.id === id);
+    let totalIndex = newTotalTasks.findIndex((i) => i.id === id);
     newTasks[index].completion = !newTasks[index].completion;
+    newTotalTasks[totalIndex].completion = newTasks[index].completion;
     props.setToDoList(newTasks);
+    props.setTotalList(newTotalTasks);
   }
   function removeTask(e) {
     e.preventDefault();
     var newTasks = props.toDoList;
     newTasks = newTasks.filter((item) => item.id !== props.id);
+    var newTotalTasks = props.totalList;
+    newTotalTasks = newTotalTasks.filter((item) => item.id !== props.id);
     props.setToDoList(newTasks);
+    props.setTotalList(newTotalTasks);
   }
   if (props.completion) {
     var taskCompletion = "complete";

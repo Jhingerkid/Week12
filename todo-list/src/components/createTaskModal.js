@@ -7,8 +7,11 @@ const CreateTaskScreen = (props) => {
   function onSubmit(data) {
     setCount(count + 1);
     let newTask = { id: count, taskName: data.taskname, completion: false };
+    var allTasks = props.totalList;
     var newTasks = props.toDoList;
     newTasks.push(newTask);
+    allTasks.push(newTask);
+    props.setTotalList(allTasks);
     props.setToDoList(newTasks);
     props.onClose(false);
   }
@@ -20,8 +23,6 @@ const CreateTaskScreen = (props) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>What should we do sir?</label>
         <input type="text" {...register("taskname")} />
-        <label>And what will it cost?</label>
-        <input type="number" {...register("moralitycost")} />
         <input className="add-task" type="submit" value="Create Task" />
       </form>
       <button onClick={props.onClose} className="close-modal">

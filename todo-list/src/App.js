@@ -13,6 +13,8 @@ function App() {
   return (
     <div className="App">
       <div className="task-button-box">
+        {/* Each button really just changes the color of the modal,
+        I had some other cool ideas, but not enough time in the week */}
         <MenuButton
           buttonTitle="Righteousness"
           buttonId="righteous"
@@ -24,6 +26,7 @@ function App() {
           onClick={() => displayMenu("red")}
         />
       </div>
+      {/* This is the modal that contains all tasks and operations */}
       <TaskMenu onClose={() => setShow(false)} show={show} color={menuColor} />
     </div>
   );
