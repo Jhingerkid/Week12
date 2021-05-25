@@ -7,12 +7,11 @@ const CreateTaskScreen = (props) => {
   function onSubmit(data) {
     setCount(count + 1);
     let newTask = { id: count, taskName: data.taskname, completion: false };
-    var allTasks = props.totalList;
-    var newTasks = props.toDoList;
-    newTasks.push(newTask);
+    var allTasks = [...props.totalList];
     allTasks.push(newTask);
     props.setTotalList(allTasks);
-    props.setToDoList(newTasks);
+    props.setToDoList(allTasks);
+    console.log("create task", count);
     props.onClose(false);
   }
   if (!props.showTaskCreation) {
