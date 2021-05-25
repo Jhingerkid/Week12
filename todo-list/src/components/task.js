@@ -1,6 +1,14 @@
 import React from "react";
 
 const Task = (props) => {
+  function updateTaskName(e, id) {
+    e.preventDefault();
+    let newTaskName = e.target.value;
+    let tasks = [...props.toDoList];
+    let index = tasks.findIndex((i) => i.id === id);
+    tasks[index].taskName = newTaskName;
+    props.setTotalList(tasks);
+  }
   function completeTask(e, id) {
     e.preventDefault();
     let newTasks = [...props.toDoList];
@@ -29,7 +37,11 @@ const Task = (props) => {
   return (
     <div className="task">
       <div className="completion-box" id={taskCompletion}></div>
-      <input type="text" defaultValue={props.taskName} />
+      <input
+        onChange={(e) => updateTaskName(e, props.id)}
+        type="text"
+        defaultValue={props.taskName}
+      />
       <button onClick={(e) => removeTask(e)}>Remove Task</button>
       <button onClick={(e) => completeTask(e, props.id)}>
         Change Task State
