@@ -7,7 +7,33 @@ const TaskMenu = (props) => {
   const [toDoList, setToDoList] = useState([]);
   const [totalList, setTotalList] = useState([]);
   const [showTaskCreation, setTaskShow] = useState(false);
-  console.log(toDoList);
+  function sortComplete(e) {
+    e.preventDefault();
+    let completedTasks = [...totalList]
+      .filter((task) => task.completion === true)
+      .map((completedTask) => {
+        return completedTask;
+      });
+    setToDoList(completedTasks);
+  }
+  function sortIncomplete(e) {
+    e.preventDefault();
+    let incompletedTasks = [...totalList]
+      .filter((task) => task.completion === false)
+      .map((incompletedTask) => {
+        return incompletedTask;
+      });
+    setToDoList(incompletedTasks);
+    console.log("incomplete list");
+  }
+  function sortAll(e) {
+    e.preventDefault();
+    var allTasks = [...totalList];
+    setToDoList(allTasks);
+    console.log("all");
+  }
+  console.log("Total tasks", totalList);
+  console.log("Current Tasks", toDoList);
   if (!props.show) {
     return null;
   }
@@ -28,6 +54,17 @@ const TaskMenu = (props) => {
         setToDoList={setToDoList}
         setTotalList={setTotalList}
       />
+      <div className="task-form-operations">
+        <button onClick={(e) => sortComplete(e)} className="task-form-button">
+          Completed Tasks
+        </button>
+        <button onClick={(e) => sortIncomplete(e)} className="task-form-button">
+          Incompleted Tasks
+        </button>
+        <button onClick={(e) => sortAll(e)} className="task-form-button">
+          All Tasks
+        </button>
+      </div>
       <button onClick={props.onClose} className="close-modal">
         Close
       </button>
